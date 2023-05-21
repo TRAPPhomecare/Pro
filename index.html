@@ -75,6 +75,8 @@
               // Successfully got the subject, display it.
               // console.log('The subject is: ' + asyncResult.value);
               var text = asyncResult.value;
+              console.log(text);
+
               var regex = /\[([^\][]*)]/g;
               var results = [], m;
               while (m = regex.exec(text)) {
@@ -88,11 +90,11 @@
             }
           });
 
+          var cvv=results[0]
 
 
 
-
-        sayHello(cv + results[0]);
+        sayHello(cv + cvv);
       });
     });
 
