@@ -63,17 +63,9 @@ a.forEach(b => {
   b.addEventListener('click', function handleClick(event) {
     console.log('[', b.innerHTML,']');
     var cv = '[' + b.innerHTML + ']' ;
+    getSubject();
     sayHello( cv );
-    Office.initialize = function () {
-    item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready method.
-    $(document).ready(function () {
-        // After the DOM is loaded, app-specific code can run.
-        // Get the subject of the item being composed.
-        getSubject();
-    });
-}
-  });
+
 });
 
 
@@ -87,19 +79,10 @@ a.forEach(b => {
 
 
 
-      Office.initialize = function () {
-    item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready method.
-    $(document).ready(function () {
-        // After the DOM is loaded, app-specific code can run.
-        // Get the subject of the item being composed.
-        getSubject();
-    });
-}
 
 // Get the subject of the item that the user is composing.
 function getSubject() {
-    item.subject.getAsync(
+  Office.context.mailbox.item.subject.getAsync(
         function (asyncResult) {
             if (asyncResult.status == Office.AsyncResultStatus.Failed){
                 write(asyncResult.error.message);
