@@ -64,6 +64,15 @@
 
 
   <script>
+
+
+Office.onReady((info) => {
+        if (info.host === Office.HostType.Outlook) {
+            return
+        }
+    });
+
+
 function sayHello() {
   Office.context.mailbox.item.body.setAsync(
     'Hello world!',
