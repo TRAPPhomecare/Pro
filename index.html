@@ -62,6 +62,7 @@ const a = document.querySelectorAll('.sbj');
 a.forEach(b => {
   b.addEventListener('click', function handleClick(event) {
     console.log('[', b.innerHTML,']');
+    sayHello();
   });
 });
 
@@ -75,6 +76,27 @@ a.forEach(b => {
       });
 
       function sayHello() {
+
+        
+       
+    item.subject.getAsync(
+        function (asyncResult) {
+            if (asyncResult.status == Office.AsyncResultStatus.Failed){
+                write(asyncResult.error.message);
+            }
+            else {
+                // Successfully got the subject, display it.
+                write ('The subject is: ' + asyncResult.value);
+                console.log(asyncResult.value);
+            }
+        });
+
+
+
+
+
+
+
         Office.context.mailbox.item.body.setAsync('Hello world!', {
             coercionType: 'html', // Write text as HTML
           },
