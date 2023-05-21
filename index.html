@@ -71,6 +71,7 @@ function sayHello() {
       coercionType: 'html', // Write text as HTML
     },
 
+
     // Callback method to check that setAsync succeeded
     function (asyncResult) {
       if (asyncResult.status == Office.AsyncResultStatus.Failed) {
@@ -78,6 +79,12 @@ function sayHello() {
       }
     }
   );
+
+  Office.context.mailbox.item.subject.setAsync("New subject!", function (asyncResult) {
+    if (asyncResult.status === "failed") {
+        console.log("Action failed with error: " + asyncResult.error.message);
+    }
+});
 }
   </script>
 
