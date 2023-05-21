@@ -1,152 +1,181 @@
 <!DOCTYPE html>
 <html lang='en' class=''>
-  <head>
-    <meta charset='UTF-8'>
-    <title>CodePen Demo</title>
-    <meta name="robots" content="noindex">
-    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
-    <style></style>
-  </head>
-  <body>
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 100%;">
-      <div class="list-group"  role="tablist">
-        <a class="list-group-item" id="PT"  onclick="s(this.id)"  href="javascript:void(0)" role="">Portugal</a>
-        <a class="list-group-item" id="ES" href="javascript:void(0)" onclick="s(this.id)" role="">Espanha</a>
-        <hr>
-      </div>
-      <div class="list-group"  id="PTlt" role="tablist" style="height: 80%;display: none;">
-        <a class="list-group-item sbj"  href="javascript:void(0)">Correção serviços proprio dia</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Correção de serviço</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Correção na ficha do utente</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Pedido de informação prioritario</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Pedido de informação</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Pedido de serviço proprio dia</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Pedido de serviço</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Alta proprio dia</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Alta</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Documentos proprio dia</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Documentos</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Baixa proprio dia</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Baixa</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Leituras até 72 horas</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Leituras</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">ISQR</a>
-        <a class="list-group-item sbj"  href="javascript:void(0)">Listagem</a>
-      </div>
-      <div class="list-group"  id="ESlt" role="tablist"   style="height: 80%;display: none;">
-        <a class="list-group-item sbj" href="javascript:void(0)">Alta tratamiento urgente</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Alta tratamiento </a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Cambio tratamiento urgente</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Cambio tratamiento </a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Bajas tratamiento urgente</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Bajas tratamiento </a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Solicitud servicios urgentes</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Solicitud servicios urgentes </a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Pedido documentos</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Listados</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">ISQR</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Actualizacion de datos</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Baixa</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Leituras até 72 horas</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Leituras</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">ISQR</a>
-        <a class="list-group-item sbj" href="javascript:void(0)">Desplazados</a>
-      </div>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>CodePen Demo</title>
+  <meta name="robots" content="noindex">
+  <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
+  <style></style>
+</head>
+
+<body>
+  <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 100%;">
+    <div class="list-group" role="tablist">
+      <a class="list-group-item" id="PT" onclick="s(this.id)" href="javascript:void(0)" role="">Portugal</a>
+      <a class="list-group-item" id="ES" href="javascript:void(0)" onclick="s(this.id)" role="">Espanha</a>
+      <hr>
     </div>
-    <script>
+    <div class="list-group" id="PTlt" role="tablist" style="height: 80%;display: none;">
+      <a class="list-group-item sbj" href="javascript:void(0)">Correção serviços proprio dia</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Correção de serviço</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Correção na ficha do utente</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Pedido de informação prioritario</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Pedido de informação</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Pedido de serviço proprio dia</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Pedido de serviço</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Alta proprio dia</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Alta</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Documentos proprio dia</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Documentos</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Baixa proprio dia</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Baixa</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Leituras até 72 horas</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Leituras</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">ISQR</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Listagem</a>
+    </div>
+    <div class="list-group" id="ESlt" role="tablist" style="height: 80%;display: none;">
+      <a class="list-group-item sbj" href="javascript:void(0)">Alta tratamiento urgente</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Alta tratamiento </a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Cambio tratamiento urgente</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Cambio tratamiento </a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Bajas tratamiento urgente</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Bajas tratamiento </a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Solicitud servicios urgentes</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Solicitud servicios urgentes </a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Pedido documentos</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Listados</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">ISQR</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Actualizacion de datos</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Baixa</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Leituras até 72 horas</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Leituras</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">ISQR</a>
+      <a class="list-group-item sbj" href="javascript:void(0)">Desplazados</a>
+    </div>
+  </div>
+  <script>
 
 
-const a = document.querySelectorAll('.sbj');
+    const a = document.querySelectorAll('.sbj');
 
-a.forEach(b => {
-  b.addEventListener('click', function handleClick(event) {
-    console.log('[', b.innerHTML,']');
-    var cv = '[' + b.innerHTML + ']' ;
-    fp=getSubject();
-    sayHello( cv + fp );
-  });
-});
+    a.forEach(b => {
+      b.addEventListener('click', function handleClick(event) {
+        console.log('[', b.innerHTML, ']');
+        var cv = '[' + b.innerHTML + ']';
 
-
-
-
-      Office.onReady((info) => {
-        if (info.host === Office.HostType.Outlook) {
-          return
-        } else {throw new Error('Not Outlook');}
-      });
-
-
-
-
-// Get the subject of the item that the user is composing.
-function getSubject() {
-  Office.context.mailbox.item.subject.getAsync(
-        function (asyncResult) {
-            if (asyncResult.status == Office.AsyncResultStatus.Failed){
-                write(asyncResult.error.message);
-            }
-            else {
-                // Successfully got the subject, display it.
-               // console.log('The subject is: ' + asyncResult.value);
-                var text = asyncResult.value;
-var regex = /\[([^\][]*)]/g;
-var results=[], m;
-while ( m = regex.exec(text) ) {
-  results.push(m[1]);
-}
-
-
-return results[0] ;
-
-
-            }
-        });
-}
-
-
-
-      function sayHello(cv ) {
-
-        
-
-    /*    Office.context.mailbox.item.body.setAsync('Hello world!', {
-            coercionType: 'html', // Write text as HTML
-          },
-          // Callback method to check that setAsync succeeded
-          function(asyncResult) {
+        Office.context.mailbox.item.subject.getAsync(
+          function (asyncResult) {
             if (asyncResult.status == Office.AsyncResultStatus.Failed) {
               write(asyncResult.error.message);
             }
-          });*/
-        Office.context.mailbox.item.subject.setAsync(cv , function(asyncResult) {
-          if (asyncResult.status === "failed") {
-            console.log("Action failed with error: " + asyncResult.error.message);
+            else {
+              // Successfully got the subject, display it.
+              // console.log('The subject is: ' + asyncResult.value);
+              var text = asyncResult.value;
+              var regex = /\[([^\][]*)]/g;
+              var results = [], m;
+              while (m = regex.exec(text)) {
+                results.push(m[1]);
+              }
+
+
+
+
+
+            }
+          });
+
+
+
+
+
+        sayHello(cv + results[0]);
+      });
+    });
+
+
+
+
+    Office.onReady((info) => {
+      if (info.host === Office.HostType.Outlook) {
+        return
+      } else { throw new Error('Not Outlook'); }
+    });
+
+
+
+
+    // Get the subject of the item that the user is composing.
+    function getSubject() {
+      Office.context.mailbox.item.subject.getAsync(
+        function (asyncResult) {
+          if (asyncResult.status == Office.AsyncResultStatus.Failed) {
+            write(asyncResult.error.message);
+          }
+          else {
+            // Successfully got the subject, display it.
+            // console.log('The subject is: ' + asyncResult.value);
+            var text = asyncResult.value;
+            var regex = /\[([^\][]*)]/g;
+            var results = [], m;
+            while (m = regex.exec(text)) {
+              results.push(m[1]);
+            }
+
+
+            return results[0];
+
+
           }
         });
+    }
+
+
+
+    function sayHello(cv) {
+
+
+
+      /*    Office.context.mailbox.item.body.setAsync('Hello world!', {
+              coercionType: 'html', // Write text as HTML
+            },
+            // Callback method to check that setAsync succeeded
+            function(asyncResult) {
+              if (asyncResult.status == Office.AsyncResultStatus.Failed) {
+                write(asyncResult.error.message);
+              }
+            });*/
+      Office.context.mailbox.item.subject.setAsync(cv, function (asyncResult) {
+        if (asyncResult.status === "failed") {
+          console.log("Action failed with error: " + asyncResult.error.message);
+        }
+      });
+    }
+
+    function s(va) {
+
+      for (const elem of document.querySelectorAll('.list-group-item')) {
+        elem.classList.remove("active");
       }
 
-      function s(va) {
-        
-        for (const elem of document.querySelectorAll('.list-group-item')) {
-          elem.classList.remove("active");
-}
+      let elem = document.getElementById(va);
+      elem.classList.add("active");
 
-        let elem = document.getElementById(va);
-        elem.classList.add("active");
-    
-          document.getElementById("PTlt").style.display = 'none';
-          document.getElementById("ESlt").style.display = 'none';
-          var x = document.getElementById(va+"lt");
-   
+      document.getElementById("PTlt").style.display = 'none';
+      document.getElementById("ESlt").style.display = 'none';
+      var x = document.getElementById(va + "lt");
 
 
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } 
-        } 
 
-    </script>
-  </body>
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      }
+    }
+
+  </script>
+</body>
+
 </html>
