@@ -57,7 +57,7 @@
     </div>
   </div>
   <script>
-
+ let cvv=""
 
     const a = document.querySelectorAll('.sbj');
 
@@ -80,11 +80,11 @@
               while (m = regex.exec(text)) {
                 results.push(m[1]);
               }
+              cvv = results[0];
             }
           });
 
-        var cvv = results[0];
-        console.log('cccccccccc' + cvv);
+      
 
    
         sayHello(cv + cvv);
