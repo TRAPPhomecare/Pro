@@ -78,7 +78,7 @@
         });
       }
 
-      function s(id) {
+      function s(va) {
         
         for (const elem of document.querySelectorAll('.list-group-item')) {
           element.classList.remove("active");
@@ -86,12 +86,12 @@
 
 
             element.classList.remove("active");
-        let elem = document.getElementById(id);
+        let elem = document.getElementById(va);
         elem.classList.add("active");
     
           document.getElementById("PTlt").style.display = 'none';
           document.getElementById("ESlt").style.display = 'none';
-          var x = document.getElementById(id+"lt");
+          var x = document.getElementById(va+"lt");
    
 
 
