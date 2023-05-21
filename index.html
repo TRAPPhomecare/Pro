@@ -62,7 +62,17 @@ const a = document.querySelectorAll('.sbj');
 a.forEach(b => {
   b.addEventListener('click', function handleClick(event) {
     console.log('[', b.innerHTML,']');
-    sayHello();
+    var cv = '[' + b.innerHTML + ']' ;
+    sayHello( cv );
+    Office.initialize = function () {
+    item = Office.context.mailbox.item;
+    // Checks for the DOM to load using the jQuery ready method.
+    $(document).ready(function () {
+        // After the DOM is loaded, app-specific code can run.
+        // Get the subject of the item being composed.
+        getSubject();
+    });
+}
   });
 });
 
@@ -75,27 +85,37 @@ a.forEach(b => {
         }
       });
 
-      function sayHello() {
 
-        
-       
-        Office.context.mailbox.item.subject.getAsync(
+
+      Office.initialize = function () {
+    item = Office.context.mailbox.item;
+    // Checks for the DOM to load using the jQuery ready method.
+    $(document).ready(function () {
+        // After the DOM is loaded, app-specific code can run.
+        // Get the subject of the item being composed.
+        getSubject();
+    });
+}
+
+// Get the subject of the item that the user is composing.
+function getSubject() {
+    item.subject.getAsync(
         function (asyncResult) {
             if (asyncResult.status == Office.AsyncResultStatus.Failed){
                 write(asyncResult.error.message);
             }
             else {
                 // Successfully got the subject, display it.
-                write ('The subject is: ' + asyncResult.value);
-                console.log(asyncResult.value);
+                console.log('The subject is: ' + asyncResult.value);
             }
         });
+}
 
 
 
+      function sayHello(cv ) {
 
-
-
+        
 
         Office.context.mailbox.item.body.setAsync('Hello world!', {
             coercionType: 'html', // Write text as HTML
@@ -106,7 +126,7 @@ a.forEach(b => {
               write(asyncResult.error.message);
             }
           });
-        Office.context.mailbox.item.subject.setAsync("New subject!", function(asyncResult) {
+        Office.context.mailbox.item.subject.setAsync(cv , function(asyncResult) {
           if (asyncResult.status === "failed") {
             console.log("Action failed with error: " + asyncResult.error.message);
           }
