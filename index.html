@@ -83,18 +83,18 @@
             element.classList.remove("active");
         let elem = document.getElementById(id);
         elem.classList.add("active");
-        if (id='PT') {
-          var x = document.getElementById("PTlt");
+    
+          document.getElementById("PTlt").style.display = 'none';
+          document.getElementById("ESlt").style.display = 'none';
+          var x = document.getElementById(id+"lt");
+   
+
+
   if (x.style.display === "none") {
     x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-        } else {
-          
-        }
+  } 
+        } 
 
-      }
     </script>
   </body>
 </html>
