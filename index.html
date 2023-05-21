@@ -81,9 +81,7 @@
                 results.push(m[1]);
               }
 
-              var h=results[0];
-              console.log(h+"text orf"+text);
-              cvv = texto.replace( h, "");
+              cvv = text.replace( results[0], "");
               sayHello(cv + cvv);
             }
           });
