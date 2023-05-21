@@ -80,10 +80,11 @@
 
       function s(id) {
         
-
-        for (const elem of document.querySelector('.list-group-item')) {
-          elem.style.display = 'none';
+        for (const elem of document.querySelectorAll('.list-group-item')) {
+    elem.style.display = 'none';
 }
+
+
             element.classList.remove("active");
         let elem = document.getElementById(id);
         elem.classList.add("active");
