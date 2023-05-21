@@ -64,7 +64,7 @@ a.forEach(b => {
     console.log('[', b.innerHTML,']');
     var cv = '[' + b.innerHTML + ']' ;
     getSubject();
-    sayHello( cv );
+    sayHello( cv + getSubject() );
   });
 });
 
@@ -90,6 +90,15 @@ function getSubject() {
             else {
                 // Successfully got the subject, display it.
                 console.log('The subject is: ' + asyncResult.value);
+                var text = asyncResult.value;
+var regex = /\[([^\][]*)]/g;
+var results=[], m;
+while ( m = regex.exec(text) ) {
+  results.push(m[1]);
+}
+return results[0] ;
+
+
             }
         });
 }
