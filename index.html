@@ -79,7 +79,7 @@ a.forEach(b => {
 
         
        
-    item.subject.getAsync(
+        Office.context.mailbox.item.subject.getAsync(
         function (asyncResult) {
             if (asyncResult.status == Office.AsyncResultStatus.Failed){
                 write(asyncResult.error.message);
