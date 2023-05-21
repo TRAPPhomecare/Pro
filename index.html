@@ -65,7 +65,7 @@
       b.addEventListener('click', function handleClick(event) {
 
         var cv = '[' + b.innerHTML + ']';
-        getSubject();
+
         Office.context.mailbox.item.subject.getAsync(
           function (asyncResult) {
             if (asyncResult.status == Office.AsyncResultStatus.Failed) {
@@ -80,7 +80,8 @@
               while (m = regex.exec(text)) {
                 results.push(m[1]);
               }
-              cvv = results[0];
+              cvv = texto.replace(results[0], "");
+              
             }
           });
 
