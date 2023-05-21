@@ -79,7 +79,10 @@
       }
 
       function s(id) {
-        id.style.background = 'red';
+        var element = document.querySelector('.list-group-item');
+            element.classList.remove("active");
+        let elem = document.getElementById(id);
+        elem.style.background = 'red';
       }
     </script>
   </body>
