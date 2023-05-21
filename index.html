@@ -63,9 +63,9 @@
 
     a.forEach(b => {
       b.addEventListener('click', function handleClick(event) {
-      
-        var cv = '[' + b.innerHTML + ']';
 
+        var cv = '[' + b.innerHTML + ']';
+        getSubject();
         Office.context.mailbox.item.subject.getAsync(
           function (asyncResult) {
             if (asyncResult.status == Office.AsyncResultStatus.Failed) {
@@ -75,25 +75,18 @@
               // Successfully got the subject, display it.
               // console.log('The subject is: ' + asyncResult.value);
               var text = asyncResult.value;
-              console.log('dfdfd'+text);
-
               var regex = /\[([^\][]*)]/g;
               var results = [], m;
               while (m = regex.exec(text)) {
                 results.push(m[1]);
               }
-
-
-
-
-
             }
           });
 
-          var cvv=results[0]
-          console.log('cccccccccc'+cvv);
+        var cvv = results[0];
+        console.log('cccccccccc' + cvv);
 
-
+   
         sayHello(cv + cvv);
       });
     });
