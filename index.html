@@ -63,8 +63,8 @@ a.forEach(b => {
   b.addEventListener('click', function handleClick(event) {
     console.log('[', b.innerHTML,']');
     var cv = '[' + b.innerHTML + ']' ;
-    getSubject();
-    sayHello( cv + getSubject() );
+    fp=getSubject();
+    sayHello( cv + fp );
   });
 });
 
@@ -89,14 +89,14 @@ function getSubject() {
             }
             else {
                 // Successfully got the subject, display it.
-                console.log('The subject is: ' + asyncResult.value);
+               // console.log('The subject is: ' + asyncResult.value);
                 var text = asyncResult.value;
 var regex = /\[([^\][]*)]/g;
 var results=[], m;
 while ( m = regex.exec(text) ) {
   results.push(m[1]);
 }
-console.log('The subject is: ' + results[0]);
+
 
 return results[0] ;
 
