@@ -80,7 +80,10 @@
               while (m = regex.exec(text)) {
                 results.push(m[1]);
               }
-              cvv = texto.replace(results[0], "");
+
+              var h=results[0];
+              console.log(h+"text orf"+text);
+              cvv = texto.replace( h, "");
               
             }
           });
