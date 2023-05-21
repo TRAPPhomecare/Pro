@@ -1,103 +1,63 @@
 <!DOCTYPE html>
 <html lang='en' class=''>
-
-<head>
-
-  <meta charset='UTF-8'>
-  <title>CodePen Demo</title>
-
-  <meta name="robots" content="noindex">
-
-
-  <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-  <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
-  <style>
-
-  </style>
-
-
-</head>
-
-<body>
-
-
-
-
-  <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 100%;">
-
-
-
-
-    <div class="list-group" id="myList" role="tablist">
-
-      <a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#home"
-        role="tab">Portugal</a>
-
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#home" role="tab">Espanha</a>
-      <hr>
+  <head>
+    <meta charset='UTF-8'>
+    <title>CodePen Demo</title>
+    <meta name="robots" content="noindex">
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
+    <style></style>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 100%;">
+      <div class="list-group" id="myList" role="tablist">
+        <a class="list-group-item active"  href="" role="">Portugal</a>
+        <a class="list-group-item "  href="" role="">Espanha</a>
+        <hr>
+      </div>
+      <div class="list-group" id="myList" role="tablist" style="height: 80%;">
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile" onclick="sayHello()" role="tab">Correção serviços proprio dia</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" onclick="sayHello()" role="tab">Correção de serviço</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Correção na ficha do utente</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile" role="tab">Pedido de informação prioritario</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Pedido de informação</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Pedido de serviço proprio dia</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile" role="tab">Pedido de serviço</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Alta proprio dia</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Alta</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile" role="tab">Documentos proprio dia</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Documentos</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Baixa proprio dia</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Baixa</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Leituras até 72 horas</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Leituras</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">ISQR</a>
+        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Listagem</a>
+      </div>
     </div>
-
-
-    <div class="list-group" id="myList" role="tablist" style="height: 80%;">
-
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile"  onclick="sayHello()" role="tab">Correção serviços proprio dia</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages"  onclick="sayHello()" role="tab">Correção de serviço</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Correção na ficha do utente</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile" role="tab">Pedido de informação prioritario</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Pedido de informação</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Pedido de serviço proprio dia</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile" role="tab">Pedido de serviço</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Alta proprio dia</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Alta</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile" role="tab">Documentos proprio dia</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Documentos</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Baixa proprio dia</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Baixa</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Leituras até 72 horas</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Leituras</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">ISQR</a>
-      <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Listagem</a>
-    </div>
-
-
-  </div>
-
-
-  <script>
-
-
-Office.onReady((info) => {
+    <script>
+      Office.onReady((info) => {
         if (info.host === Office.HostType.Outlook) {
-            return
+          return
         }
-    });
+      });
 
-
-function sayHello() {
-  Office.context.mailbox.item.body.setAsync(
-    'Hello world!',
-    {
-      coercionType: 'html', // Write text as HTML
-    },
-
-
-    // Callback method to check that setAsync succeeded
-    function (asyncResult) {
-      if (asyncResult.status == Office.AsyncResultStatus.Failed) {
-        write(asyncResult.error.message);
+      function sayHello() {
+        Office.context.mailbox.item.body.setAsync('Hello world!', {
+            coercionType: 'html', // Write text as HTML
+          },
+          // Callback method to check that setAsync succeeded
+          function(asyncResult) {
+            if (asyncResult.status == Office.AsyncResultStatus.Failed) {
+              write(asyncResult.error.message);
+            }
+          });
+        Office.context.mailbox.item.subject.setAsync("New subject!", function(asyncResult) {
+          if (asyncResult.status === "failed") {
+            console.log("Action failed with error: " + asyncResult.error.message);
+          }
+        });
       }
-    }
-  );
-
-  Office.context.mailbox.item.subject.setAsync("New subject!", function (asyncResult) {
-    if (asyncResult.status === "failed") {
-        console.log("Action failed with error: " + asyncResult.error.message);
-    }
-});
-}
-  </script>
-
-
-</body>
-
+    </script>
+  </body>
 </html>
