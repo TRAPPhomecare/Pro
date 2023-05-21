@@ -15,7 +15,7 @@
         <a class="list-group-item " id="ES" href="javascript:void(0)" onclick="s(this.id)" role="">Espanha</a>
         <hr>
       </div>
-      <div class="list-group"  id="PTlt" role="tablist" style="height: 80%;">
+      <div class="list-group"  id="PTlt" role="tablist" style="height: 80%;display: none;">
         <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile"  role="tab">Correção serviços proprio dia</a>
         <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Correção de serviço</a>
         <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Correção na ficha do utente</a>
@@ -34,7 +34,7 @@
         <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">ISQR</a>
         <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Listagem</a>
       </div>
-      <div class="list-group"  id="ESlt" role="tablist" style="height: 80%;">
+      <div class="list-group"  id="ESlt" role="tablist"   style="height: 80%;display: none;">
         <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile"  role="tab">Correção serviços proprio dia</a>
         <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages" role="tab">Correção de serviço</a>
         <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings" role="tab">Correção na ficha do utente</a>
@@ -82,7 +82,18 @@
         var element = document.querySelector('.list-group-item');
             element.classList.remove("active");
         let elem = document.getElementById(id);
-        elem.style.background = 'red';
+        elem.classList.add("active");
+        if (id='PT') {
+          var x = document.getElementById("PTlt");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+        } else {
+          
+        }
+
       }
     </script>
   </body>
