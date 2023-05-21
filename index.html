@@ -63,7 +63,7 @@
 
     a.forEach(b => {
       b.addEventListener('click', function handleClick(event) {
-        console.log('[', b.innerHTML, ']');
+      
         var cv = '[' + b.innerHTML + ']';
 
         Office.context.mailbox.item.subject.getAsync(
@@ -91,7 +91,7 @@
           });
 
           var cvv=results[0]
-
+          console.log('cccccccccc'+cvv);
 
 
         sayHello(cv + cvv);
