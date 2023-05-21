@@ -11,8 +11,8 @@
   <body>
     <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 100%;">
       <div class="list-group"  role="tablist">
-        <a class="list-group-item active" id="PT"  onclick="s(this.id)"  href="javascript:void(0)" role="">Portugal</a>
-        <a class="list-group-item " id="ES" href="javascript:void(0)" onclick="s(this.id)" role="">Espanha</a>
+        <a class="list-group-item" id="PT"  onclick="s(this.id)"  href="javascript:void(0)" role="">Portugal</a>
+        <a class="list-group-item" id="ES" href="javascript:void(0)" onclick="s(this.id)" role="">Espanha</a>
         <hr>
       </div>
       <div class="list-group"  id="PTlt" role="tablist" style="height: 80%;display: none;">
@@ -79,7 +79,11 @@
       }
 
       function s(id) {
-        var element = document.querySelector('.list-group-item');
+        
+
+        for (const elem of document.querySelector('.list-group-item')) {
+          elem.style.display = 'none';
+}
             element.classList.remove("active");
         let elem = document.getElementById(id);
         elem.classList.add("active");
