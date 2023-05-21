@@ -65,7 +65,7 @@ a.forEach(b => {
     var cv = '[' + b.innerHTML + ']' ;
     getSubject();
     sayHello( cv );
-
+  });
 });
 
 
@@ -74,7 +74,7 @@ a.forEach(b => {
       Office.onReady((info) => {
         if (info.host === Office.HostType.Outlook) {
           return
-        }
+        } else {throw new Error('Not Outlook');}
       });
 
 
